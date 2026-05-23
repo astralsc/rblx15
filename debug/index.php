@@ -33,14 +33,14 @@ if($con === false){
                 
                 
                 
-                    <h2>You have an active membership of <b>Turbo Builders Club 660</b></h2><img src="https://static.wikia.nocookie.net/roblox/images/7/77/TBCIcon.png/" class="builders-club" style="width: 60px;">
+                    <h2>Debug mode is coming soon! (hopefully)</h2>
                 
             </div>
         </div>
 	<div class="col">
 <br>
                         <div class="card card-body">
-                            <h5> Your membership is maintained by RBLX15 Administrators. </h5>
+                            <h5> nothing to do here. </h5>
                             
                         </div>
                     </div>

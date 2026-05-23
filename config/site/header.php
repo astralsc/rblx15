@@ -57,7 +57,7 @@ $username = $_SESSION["user"]["username"];
         <?php } ?>
 	<?php if(isset($_SESSION["user"])){ ?>
           <li class="nav-item">
-          <a class="nav-link" href="/debug"><i class="fa-duotone fa-code"></i> Debug Mode [NOT FINISHED]</a>
+          <a class="nav-link" href="/debug"><i class="fa-duotone fa-code"></i> Debug Mode</a>
         </li>
         <?php } ?>
       </ul>
