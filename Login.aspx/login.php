@@ -2,10 +2,10 @@
   // TODO: switch to pdo and fix topbar.
    include_once $_SERVER['DOCUMENT_ROOT'].'/navbar.php';
 // Database connection
-define('DB_SERVER', 'mysql.ct8.pl');
-define('DB_USERNAME', 'm36802');
-define('DB_PASSWORD', 'NRQK591yTpoL8y7A:e~2nw5<0QVsmr');
-define('DB_NAME', 'm36802_database');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'rblx15');
 
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if (!$conn) {
