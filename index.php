@@ -66,8 +66,7 @@ if(!isset($_SESSION['user'])){
                             <h5> Friends (1) </h5>
                             <a class="d-inline-block text-decoration-none text-light me-3" style="max-width:100px" href="#">
                         <div class="position-relative">
-                            <!--<img src="https://cdn.sitetest1.rb15.us.to/pending.png" width="100" height="100" class="bg-light d-inline-block align-text-top rounded-circle">-->
-                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/d/1/2/d120b245f694af8bb4ebb41c467e7686a168553a.png" width="100" height="100" class="bg-light d-inline-block align-text-top rounded-circle">
+                            <img src="https://cdn.sitetest1.rb15.us.to/pending.png" width="100" height="100" class="bg-light d-inline-block align-text-top rounded-circle">
                                                     </div>
                         <p class="mb-0 text-center">ROBLOX</p>
                     </a>
