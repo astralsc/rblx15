@@ -15,7 +15,7 @@ try {
         config['database']['password'],
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-} catch (PDOException) {
+} catch (PDOException $e) {
     header('Content-Type: application/json');
     exit(json_encode(['error' => "true", "message" => "Database Error. Please Contact Administrator"])); //$e->getMessage()
 }
