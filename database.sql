@@ -42,7 +42,8 @@ CREATE TABLE `cookies` (
   `cookie` char(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `userid` int(10) UNSIGNED NOT NULL,
   `expiresOn` int(10) UNSIGNED NOT NULL,
-  `createdAt` int(10) UNSIGNED NOT NULL
+  `createdAt` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`cookie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

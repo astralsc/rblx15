@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# removes .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteRule ^(.+)$ $1.php [L]
