@@ -168,7 +168,7 @@ while($row = $FindGames->fetch(PDO::FETCH_ASSOC)){
             <div class="game-item">
     <div class="always-shown">
         
-            <span class=""><img class="game-item-image" src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter"/></span>
+            <span class=""><img class="game-item-image" src="/images/Unnaproved.png"/></span>
             <div class="game-name notranslate text-truncate text-center">
                 '.$row['gameName'].'  
             </div>
@@ -199,7 +199,7 @@ while($row = $FindGames->fetch(PDO::FETCH_ASSOC)){
             <div class="game-item">
     <div class="always-shown">
         
-            <span class=""><img class="game-item-image" src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter"/></span>
+            <span class=""><img class="game-item-image" src="/images/Unnaproved.png"/></span>
             <div class="game-name notranslate text-truncate text-center">
                 '.$row['gameName'].'  
             </div>
