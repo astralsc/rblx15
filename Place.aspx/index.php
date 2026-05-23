@@ -60,7 +60,7 @@ extract($_SESSION['userData']);
         
         
     <div class="mx-auto col-sm-7">
-      <!--<img src="https://cdn.localhost/1bc0eecbf9203e4e6aaf81a7ca635c62.png" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>-->
+      <!--<img src="https://cdn.rb15.us.to/1bc0eecbf9203e4e6aaf81a7ca635c62.png" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>-->
       <img src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>
     
     <div class="row"> <div class="col-sm-6 text-center"><h5>Description</h5> <p><?php echo $row['gameDesc'] ?></p></div><div class="col-sm-6 text-center"><style>.checked { color: orange; }</style><h5>Rating</h5> 
@@ -83,14 +83,14 @@ extract($_SESSION['userData']);
 		echo' ';
 		echo'	
         function join() {
-              const placeLauncher = `https%3A%2F%2Fwww.localhost%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}%26username%3D${username}%26id%3D${userid}`;
+              const placeLauncher = `https%3A%2F%2Fwww.rb15.us.to%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}%26username%3D${username}%26id%3D${userid}`;
               const joinArgs = `rblx15-player-rb15:1+launchmode:play+gameinfo:'.time().'+launchtime:17020401369379+placelauncherurl:${placeLauncher}+browsertrackerid:197870394468`;
               window.location.href = joinArgs;
         }
 		
 					
         function join2016() {
-              const placeLauncher = `https%3A%2F%2Fwww.localhost%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}%26username%3D${username}%26id%3D${userid}`;
+              const placeLauncher = `https%3A%2F%2Fwww.rb15.us.to%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}%26username%3D${username}%26id%3D${userid}`;
               const joinArgs = `rblx16-player-rb15:1+launchmode:play+gameinfo:'.time().'+launchtime:17020401369379+placelauncherurl:${placeLauncher}+browsertrackerid:197870394468`;
               window.location.href = joinArgs;
         }
@@ -98,14 +98,14 @@ extract($_SESSION['userData']);
 		}else{
 			echo'	
         function join() {
-              const placeLauncher = `https%3A%2F%2Fwww.localhost%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}`;
+              const placeLauncher = `https%3A%2F%2Fwww.rb15.us.to%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}`;
               const joinArgs = `rblx15-player-rb15:1+launchmode:play+gameinfo:0+launchtime:17020401369379+placelauncherurl:${placeLauncher}+browsertrackerid:197870394468`;
               window.location.href = joinArgs;
         }
 		
 					
           function join2016() {
-              const placeLauncher = `https%3A%2F%2Fwww.localhost%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}`;
+              const placeLauncher = `https%3A%2F%2Fwww.rb15.us.to%2Fgame%2FPlaceLauncher.ashx%2F%3FplaceId%3D${placeId}`;
               const joinArgs = `rblx16-player-rb15:1+launchmode:play+gameinfo:0+launchtime:17020401369379+placelauncherurl:${placeLauncher}+browsertrackerid:197870394468`;
               window.location.href = joinArgs;
         }

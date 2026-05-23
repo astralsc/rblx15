@@ -43,7 +43,7 @@ if(isset($_GET['code'])){
 	'client_id'=>'1211334550710521958',
 	'client_secret'=>'e7g8VilcsWuQINSTPN2W9zyR9Hu6b_u7',
 	'grant_type'=>'authorization_code',
-	'redirect_uri'=>'https://localhost/games/',
+	'redirect_uri'=>'https://rb15.us.to/games/',
 	'scope'=>'identify%20guids',
 	];
 	$payload_string = http_build_query($payload);

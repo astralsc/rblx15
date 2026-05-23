@@ -3,8 +3,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/classes/gameUtils.php';
 if (isset($_GET["placeId"]))
   {
     define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'rblx15');
-    define('DB_PASSWORD', 'A*yBH]mXYNC14]ed');
+    define('DB_USERNAME', 'root');
+    define('DB_PASSWORD', '');
     define('DB_NAME', 'rblx15');
     $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $query = mysqli_query($con,'select gameName,gameDesc,port,gameIp,owner from games where gameId="'.$_GET['placeId'].'"');
