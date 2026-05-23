@@ -59,7 +59,9 @@ extract($_SESSION['userData']);
     
         
         
-    <div class="mx-auto col-sm-7"><img src="https://cdn.localhost/1bc0eecbf9203e4e6aaf81a7ca635c62.png" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>
+    <div class="mx-auto col-sm-7">
+      <!--<img src="https://cdn.localhost/1bc0eecbf9203e4e6aaf81a7ca635c62.png" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>-->
+      <img src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter" alt="Game Image" title="Game Image" class="img-fluid"></div><div class="mx-auto col-sm-7"><br>
     
     <div class="row"> <div class="col-sm-6 text-center"><h5>Description</h5> <p><?php echo $row['gameDesc'] ?></p></div><div class="col-sm-6 text-center"><style>.checked { color: orange; }</style><h5>Rating</h5> 
 <div id="stars"><span class="fa fa-star checked"></span>

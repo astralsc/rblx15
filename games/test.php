@@ -43,7 +43,7 @@ if(isset($_GET['code'])){
 	'client_id'=>'1211334550710521958',
 	'client_secret'=>'e7g8VilcsWuQINSTPN2W9zyR9Hu6b_u7',
 	'grant_type'=>'authorization_code',
-	'redirect_uri'=>'https://rb15.us.to/games/',
+	'redirect_uri'=>'https://localhost/games/',
 	'scope'=>'identify%20guids',
 	];
 	$payload_string = http_build_query($payload);
@@ -168,7 +168,7 @@ while($row = $FindGames->fetch(PDO::FETCH_ASSOC)){
             <div class="game-item">
     <div class="always-shown">
         
-            <span class=""><img class="game-item-image" src="/images/Unnaproved.png"/></span>
+            <span class=""><img class="game-item-image" src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter"/></span>
             <div class="game-name notranslate text-truncate text-center">
                 '.$row['gameName'].'  
             </div>
@@ -199,7 +199,7 @@ while($row = $FindGames->fetch(PDO::FETCH_ASSOC)){
             <div class="game-item">
     <div class="always-shown">
         
-            <span class=""><img class="game-item-image" src="/images/Unnaproved.png"/></span>
+            <span class=""><img class="game-item-image" src="https://tr.rbxcdn.com/180DAY-d1f91a50da8371e7fe11d954ecce7a63/768/432/Image/Webp/noFilter"/></span>
             <div class="game-name notranslate text-truncate text-center">
                 '.$row['gameName'].'  
             </div>
