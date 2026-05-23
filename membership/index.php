@@ -1,6 +1,6 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/config/main.php';
-  if(!isset($_SESSION['logged_in'])){
+  if(!isset($_SESSION['user'])){
 	header("Location: /games/");
 }else{
 extract($_SESSION['userData']);
@@ -8,7 +8,7 @@ extract($_SESSION['userData']);
 // hello, meditation here. i'm too lazy and sick to fix this shit code. if someone here see this, replace it. thanks.
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'root');
 define('DB_NAME', 'rblx15');
 /* Attempt to connect to MySQL database */
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
