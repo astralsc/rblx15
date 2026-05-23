@@ -106,18 +106,41 @@ class Auth
     public static function register($username, $password)
     {
         global $pdo;
-        $query = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    
+        $query = $pdo->prepare('SELECT * FROM users WHERE username = ?');
         $query->execute([$username]);
         $user = $query->fetch();
-
+    
         if ($user) {
             return 2;
         }
-
-        $hashedPassword = password_hash($password, PASSWORD_ARGON2ID, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
-        
-        $query = $pdo->prepare("INSERT INTO users (username, password, createdAt) VALUES (:username, :password, :createdAt)");
-        $action = $query->execute(['username' => $username, 'password' => $hashedPassword, 'createdAt' => time()]);
+    
+        if (defined('PASSWORD_ARGON2ID')) {
+            $algo = PASSWORD_ARGON2ID;
+            $options = [
+                'memory_cost' => 2048,
+                'time_cost' => 4,
+                'threads' => 3
+            ];
+        } else {
+            $algo = PASSWORD_BCRYPT;
+            $options = [];
+        }
+    
+        $hashedPassword = password_hash($password, $algo, $options);
+    
+        if ($hashedPassword === false) {
+            return 0;
+        }
+    
+        $query = $pdo->prepare('INSERT INTO users (username, password, createdAt) VALUES (:username, :password, :createdAt)');
+    
+        $action = $query->execute([
+            'username' => $username,
+            'password' => $hashedPassword,
+            'createdAt' => time()
+        ]);
+    
         if ($action) {
             sleep(1);
             self::login($username, $password);
