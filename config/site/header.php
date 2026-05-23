@@ -33,7 +33,7 @@ $username = $_SESSION["user"]["username"];
   <div class="fixed-top w-100">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <img src="https://media.discordapp.net/attachments/1203057180866248845/1216116345997889576/RBLX15.png?ex=65ff379b&is=65ecc29b&hm=28abbc320e106b6ef4fbda00e1450caa33b9ac63158fee0e76b9c2e2fc34bd60&=&format=webp&quality=lossless&width=569&height=160" width="150" height="40"></a></span>
+    <img src="/images/RobloxLogo.png" width="150" height="40"></a></span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
