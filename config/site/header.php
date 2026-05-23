@@ -76,6 +76,8 @@ $username = $_SESSION["user"]["username"];
 
 if(!isset($_SESSION['user'])){	
     echo('<a href="/login/" class="btn btn-primary me-md-1">Login</a><a href="/register/" class="btn btn-primary me-md-1">Sign Up</a>');
+    //echo('<a href="/login_discord.php" class="btn btn-primary me-md-1">Login with Discord</a>        <!-- <a href="/register" class="btn btn-secondary">Register</a> -->');
+
 }else{
 	echo('<snap>RBX: '.$_SESSION['user']['robux'].'</snap><snap> Logged in as '.htmlspecialchars($username).' </snap> <a href="/logout.php" class="btn btn-danger me-md-1">Logout</a>');
 }
