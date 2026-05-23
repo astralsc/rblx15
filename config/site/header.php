@@ -57,12 +57,14 @@ $username = $_SESSION["user"]["username"];
         <?php } ?>
 	<?php if(isset($_SESSION["user"])){ ?>
           <li class="nav-item">
+          <a class="nav-link" href="https://www.mediafire.com/file/8zedrtxnehs379n/RBLX15_v2.7z/file"><i class="fa-duotone fa-code"></i> Download</a>
+        </li>
+        <?php } ?>
+	<?php if(isset($_SESSION["user"])){ ?>
+          <li class="nav-item">
           <a class="nav-link" href="/debug"><i class="fa-duotone fa-code"></i> Debug Mode</a>
         </li>
         <?php } ?>
-         <li class="nav-item">
-          <a class="nav-link" href="https://www.mediafire.com/file/8zedrtxnehs379n/RBLX15_v2.7z/file">Download</a>
-        </li>
       </ul>
     </div>
        <ul class="navbar-nav">
