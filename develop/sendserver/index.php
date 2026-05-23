@@ -40,6 +40,8 @@ if($con === false){
     $query = $pdo->prepare("INSERT INTO games (gameName, gameDesc, gameIp, port, owner, ownerid, client) VALUES (:gameName, :gameDesc, :gameIp, :port, :owner, :ownerid, :client)");
     $query->execute(["gameName" => $gamename, "gameDesc" => $desc, "gameIp" => $ip, "port" => $port, "owner" => $_SESSION["user"]["username"], "ownerid" => $_SESSION["user"]["id"], "client" => $clientreal]);
     //mysqli_query($con,"INSERT INTO `games` (`gameName`, `gameId`, `gameDesc`, `gameIp`, `port`, `owner`, `ownerid`, `client`) VALUES ('".htmlspecialchars($gamename)."', NULL, '".htmlspecialchars($desc)."', '".$ip."', ".$port.", '".$name."', '".$discord_id."', '".$clientreal."');"); // Adds the game
-	exit("game uploaded succesfully");
+    
+    header("Location: /develop");
+    exit("game uploaded succesfully");
 	 }
  }
