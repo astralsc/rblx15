@@ -30,6 +30,50 @@ class Auth
         }
     }
 
+    public static function loginForMobile($username, $password)
+    {
+        global $pdo;
+
+        $query = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+        $query->execute([$username]);
+        $user = $query->fetch();
+        if ($user == null) {
+            return false;
+        }
+        if (password_verify($password, $user["password"])) {
+            $token = self::createToken($user["userid"]);
+
+            $_SESSION["user"] = array(
+                "Status" => "OK",
+                "UserInfo" => [
+                    "UserID" => $user['userid'],
+                    "UserName" => $user['username'],
+                    "RobuxBalance" => $user["robux"],
+                    "TicketsBalance" => 0,
+                    "IsAnyBuildersClubMember" => false,
+                    "ThumbnailUrl" => "http://yourthumbnail.here/or_this_can_be_a_blank"
+                ]
+            );
+
+            echo json_encode([
+                "Status" => "OK",
+                "UserInfo" => [
+                    "UserID" => $user['userid'],
+                    "UserName" => $user['username'],
+                    "RobuxBalance" => $user["robux"],
+                    "TicketsBalance" => 0,
+                    "IsAnyBuildersClubMember" => false,
+                    "ThumbnailUrl" => "http://yourthumbnail.here/or_this_can_be_a_blank"
+                ]
+            ]);
+
+            setcookie(".ROBLOSECURITY", $token, strtotime("+1 month"), "/");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static function loginWithToken($token)
     {
         global $pdo;
