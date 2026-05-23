@@ -33,8 +33,7 @@ $username = $_SESSION["user"]["username"];
   <div class="fixed-top w-100">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <img src="/images/2014___2015_roblox_circle_logo_by_augmentedpoisonart_d8e625w-fullview.png" width="40" height="40"></a></span>
-    <img src="/images/RBLX15" width="150" height="40"></a></span>
+    <img src="/images/RBLX15.png" width="150" height="40"></a></span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
