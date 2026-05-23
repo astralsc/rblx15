@@ -60,7 +60,7 @@ CREATE TABLE `games` (
   `owner` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ownerid` int(10) UNSIGNED DEFAULT NULL,
   `client` smallint(6) DEFAULT NULL,
-  `createdAt` int(10) UNSIGNED NOT NULL
+  `createdAt` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -77,7 +77,7 @@ CREATE TABLE `users` (
   `robux` int(11) NOT NULL DEFAULT '0',
   `hasBC` tinyint(1) NOT NULL DEFAULT '0',
   `has2FA` tinyint(1) NOT NULL DEFAULT '0',
-  `createdAt` int(10) UNSIGNED NOT NULL,
+  `createdAt` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `lastLogin` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
