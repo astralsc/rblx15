@@ -26,10 +26,10 @@ SET time_zone = "+00:00";
 -- Stand-in structure for view `active_tokens`
 --
 CREATE TABLE `active_tokens` (
-`cookie` char(128)
-,`userid` int(10) unsigned
-,`username` varchar(100)
-,`expiresOn` int(10) unsigned
+`cookie` char(128),
+`userid` int(10) unsigned,
+`username` varchar(100),
+`expiresOn` int(10) unsigned
 );
 
 -- --------------------------------------------------------
@@ -53,7 +53,7 @@ CREATE TABLE `cookies` (
 --
 
 CREATE TABLE `games` (
-  `gameId` int(10) UNSIGNED NOT NULL,
+  `gameId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `gameName` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gameDesc` text COLLATE utf8mb4_unicode_ci,
   `gameIp` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -61,7 +61,8 @@ CREATE TABLE `games` (
   `owner` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ownerid` int(10) UNSIGNED DEFAULT NULL,
   `client` smallint(6) DEFAULT NULL,
-  `createdAt` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `createdAt` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  PRIMARY KEY (`gameId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -71,7 +72,7 @@ CREATE TABLE `games` (
 --
 
 CREATE TABLE `users` (
-  `userid` int(10) UNSIGNED NOT NULL,
+  `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
@@ -79,7 +80,8 @@ CREATE TABLE `users` (
   `hasBC` tinyint(1) NOT NULL DEFAULT '0',
   `has2FA` tinyint(1) NOT NULL DEFAULT '0',
   `createdAt` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `lastLogin` int(10) UNSIGNED DEFAULT NULL
+  `lastLogin` int(10) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -89,7 +91,16 @@ CREATE TABLE `users` (
 --
 DROP TABLE IF EXISTS `active_tokens`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `active_tokens`  AS  select `c`.`cookie` AS `cookie`,`c`.`userid` AS `userid`,`u`.`username` AS `username`,`c`.`expiresOn` AS `expiresOn` from (`cookies` `c` left join `users` `u` on((`u`.`userid` = `c`.`userid`))) where (`c`.`expiresOn` > unix_timestamp()) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `active_tokens` AS
+select
+  `c`.`cookie` AS `cookie`,
+  `c`.`userid` AS `userid`,
+  `u`.`username` AS `username`,
+  `c`.`expiresOn` AS `expiresOn`
+from (`cookies` `c`
+left join `users` `u`
+on((`u`.`userid` = `c`.`userid`)))
+where (`c`.`expiresOn` > unix_timestamp());
 
 --
 -- Indexes for dumped tables
@@ -99,38 +110,21 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Indexes for table `cookies`
 --
 ALTER TABLE `cookies`
-  ADD PRIMARY KEY (`cookie`),
   ADD KEY `idx_cookies_userid` (`userid`);
 
 --
 -- Indexes for table `games`
 --
 ALTER TABLE `games`
-  ADD PRIMARY KEY (`gameId`),
   ADD KEY `idx_games_ownerid` (`ownerid`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`userid`),
   ADD UNIQUE KEY `uq_users_username` (`username`),
   ADD KEY `idx_users_createdAt` (`createdAt`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `games`
---
-ALTER TABLE `games`
-  MODIFY `gameId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -139,13 +133,21 @@ ALTER TABLE `users`
 -- Constraints for table `cookies`
 --
 ALTER TABLE `cookies`
-  ADD CONSTRAINT `fk_cookies_user` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_cookies_user`
+  FOREIGN KEY (`userid`)
+  REFERENCES `users` (`userid`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
 
 --
 -- Constraints for table `games`
 --
 ALTER TABLE `games`
-  ADD CONSTRAINT `fk_games_owner` FOREIGN KEY (`ownerid`) REFERENCES `users` (`userid`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_games_owner`
+  FOREIGN KEY (`ownerid`)
+  REFERENCES `users` (`userid`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
